@@ -1,0 +1,62 @@
+#######################################
+# Syntax Coloring Map For EasingCurves
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+#######################################
+# Methods and Functions (KEYWORD2)
+######################################
+
+Start	KEYWORD2
+Restart	KEYWORD2
+Update	KEYWORD2
+SetDurationMillis	KEYWORD2
+SetDurationMicros	KEYWORD2
+SetType	KEYWORD2
+
+#######################################
+# Instances (KEYWORD1)
+#######################################
+
+EasingCurves	KEYWORD1
+
+#######################################
+# Constants (LITERAL1)
+#######################################
+
+BACK_IN	LITERAL1
+BACK_OUT	LITERAL1
+BACK_INOUT	LITERAL1
+BOUNCE_IN	LITERAL1
+BOUNCE_OUT	LITERAL1
+BOUNCE_INOUT	LITERAL1
+CIRC_IN	LITERAL1
+CIRC_OUT	LITERAL1
+CIRC_INOUT	LITERAL1
+CUBIC_IN	LITERAL1
+CUBIC_OUT	LITERAL1
+CUBIC_INOUT	LITERAL1
+ELASTIC_IN	LITERAL1
+ELASTIC_OUT	LITERAL1
+ELASTIC_INOUT	LITERAL1
+EXPO_IN	LITERAL1
+EXPO_OUT	LITERAL1
+EXPO_INOUT	LITERAL1
+LINEAR_IN	LITERAL1
+LINEAR_OUT	LITERAL1
+LINEAR_INOUT	LITERAL1
+SINE_IN	LITERAL1
+SINE_OUT	LITERAL1
+SINE_INOUT	LITERAL1
+QUAD_IN	LITERAL1
+QUAD_OUT	LITERAL1
+QUAD_INOUT	LITERAL1
+QUART_IN	LITERAL1
+QUART_OUT	LITERAL1
+QUART_INOUT	LITERAL1
+QUINT_IN	LITERAL1
+QUINT_OUT	LITERAL1
+QUINT_INOUT	LITERAL1
