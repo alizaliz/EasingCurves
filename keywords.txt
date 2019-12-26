@@ -10,12 +10,14 @@
 # Methods and Functions (KEYWORD2)
 ######################################
 
-Start	KEYWORD2
-Restart	KEYWORD2
-Update	KEYWORD2
-SetDurationMillis	KEYWORD2
-SetDurationMicros	KEYWORD2
-SetType	KEYWORD2
+start	KEYWORD2
+restart	KEYWORD2
+update	KEYWORD2
+reverseUpdate	KEYWORD2
+setDurationMillis	KEYWORD2
+setDurationMicros	KEYWORD2
+setType	KEYWORD2
+isActive	KEYWORD2
 
 #######################################
 # Instances (KEYWORD1)
