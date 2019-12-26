@@ -60,16 +60,25 @@ public:
     EasingCurves();
     EasingCurves(ease type, float start, float end, float duration);
 
-    void Start();
-    void Restart();
-    float Update();
+    void start();
+    void restart();
+    float update();
+    float reverseUpdate();
 
-    void SetDurationMillis(unsigned long interval);
-    void SetDurationMicros(unsigned long interval);
+    void setDurationMillis(unsigned long interval);
+    void setDurationMicros(unsigned long interval);
 
-    void SetType(ease type);
+    void setType(ease type);
+
+    bool isActive();
+
+
+
 
 private:
+
+    float evaluate(unsigned long t);
+
     float m_startValue;
     float m_change;
     float m_currentValue;

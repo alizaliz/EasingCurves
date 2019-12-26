@@ -7,50 +7,64 @@ EasingCurves::EasingCurves()
 
 EasingCurves::EasingCurves(ease type, float start, float end, float duration)
 {
-    SetType(type);
+    setType(type);
     m_startValue = start;
     m_change = end - start;
     m_duration =  1000 * duration;
 }
 
-void EasingCurves::Start()
+bool EasingCurves::isActive()
+{
+    return m_active;
+}
+
+void EasingCurves::start()
 {
     m_active = true;
     m_startTime = micros();
 }
 
-void EasingCurves::Restart()
+void EasingCurves::restart()
 {
-    Start();
+    start();
 }
 
-float EasingCurves::Update()
-{
+float EasingCurves::evaluate(unsigned long t){
+
     if (!m_active)
         return m_currentValue;
 
-    unsigned long elapsedTime = micros() - m_startTime;
-    if (elapsedTime >= m_duration)
+    if (t > m_duration || t < 0) // expand this for accuracy
     {
         m_active = false;
         return m_currentValue;
     }
 
-    m_currentValue = easeFunction(elapsedTime, m_startValue, m_change, m_duration);
+    m_currentValue = easeFunction(t, m_startValue, m_change, m_duration);
     return m_currentValue;
 }
 
-void EasingCurves::SetDurationMillis(unsigned long duration)
+float EasingCurves::update()
+{
+    return evaluate(micros() - m_startTime);
+}
+
+float EasingCurves::reverseUpdate()
+{
+    return evaluate(m_duration - micros() - m_startTime);
+}
+
+void EasingCurves::setDurationMillis(unsigned long duration)
 {
     m_duration = 1000 * duration;
 }
 
-void EasingCurves::SetDurationMicros(unsigned long duration)
+void EasingCurves::setDurationMicros(unsigned long duration)
 {
     m_duration = duration;
 }
 
-void EasingCurves::SetType(ease type)
+void EasingCurves::setType(ease type)
 {
     switch (type)
     {
