@@ -10,7 +10,7 @@ EasingCurves::EasingCurves(ease type, float start, float end, float duration)
     setType(type);
     m_startValue = start;
     m_change = end - start;
-    m_duration =  1000 * duration;
+    m_duration = 1000 * duration;
 }
 
 bool EasingCurves::isActive()
@@ -29,29 +29,28 @@ void EasingCurves::restart()
     start();
 }
 
-float EasingCurves::evaluate(unsigned long t){
-
-    if (!m_active)
-        return m_currentValue;
+float EasingCurves::evaluate(float t)
+{
 
     if (t > m_duration || t < 0) // expand this for accuracy
     {
         m_active = false;
-        return m_currentValue;
     }
 
-    m_currentValue = easeFunction(t, m_startValue, m_change, m_duration);
+    if (m_active)
+        m_currentValue = easeFunction(t, m_startValue, m_change, m_duration);
+
     return m_currentValue;
 }
 
 float EasingCurves::update()
 {
-    return evaluate(micros() - m_startTime);
+    return evaluate(static_cast<float>(micros() - m_startTime));
 }
 
 float EasingCurves::reverseUpdate()
 {
-    return evaluate(m_duration - micros() - m_startTime);
+    return evaluate(m_duration - static_cast<float>(micros() - m_startTime));
 }
 
 void EasingCurves::setDurationMillis(unsigned long duration)
@@ -78,13 +77,13 @@ void EasingCurves::setType(ease type)
         easeFunction = (&Back::easeInOut);
         break;
     case BOUNCE_IN:
-        easeFunction = (&Bounce::easeIn);
+        easeFunction = (&BounceCurve::easeIn);
         break;
     case BOUNCE_OUT:
-        easeFunction = (&Bounce::easeOut);
+        easeFunction = (&BounceCurve::easeOut);
         break;
     case BOUNCE_INOUT:
-        easeFunction = (&Bounce::easeInOut);
+        easeFunction = (&BounceCurve::easeInOut);
         break;
     case CIRC_IN:
         easeFunction = (&Circ::easeIn);

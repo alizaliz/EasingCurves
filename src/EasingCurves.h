@@ -72,17 +72,13 @@ public:
 
     bool isActive();
 
-
-
-
 private:
-
-    float evaluate(unsigned long t);
+    float evaluate(float t);
 
     float m_startValue;
     float m_change;
     float m_currentValue;
-    long m_startTime;
+    unsigned long m_startTime;
     float m_duration;
 
     bool m_active;
