@@ -1,7 +1,7 @@
 #ifndef _PENNER_CUBIC
 #define _PENNER_CUBIC
 
-class Cubic
+class CubicCurve
 {
 
 public:

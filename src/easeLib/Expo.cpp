@@ -1,15 +1,15 @@
 #include "Expo.h"
 
-float Expo::easeIn(float t, float b, float c, float d)
+float ExpoCurve::easeIn(float t, float b, float c, float d)
 {
 	return (t == 0) ? b : c * pow(2, 10 * (t / d - 1)) + b;
 }
-float Expo::easeOut(float t, float b, float c, float d)
+float ExpoCurve::easeOut(float t, float b, float c, float d)
 {
 	return (t == d) ? b + c : c * (-pow(2, -10 * t / d) + 1) + b;
 }
 
-float Expo::easeInOut(float t, float b, float c, float d)
+float ExpoCurve::easeInOut(float t, float b, float c, float d)
 {
 	if (t == 0)
 		return b;

@@ -1,7 +1,7 @@
 #ifndef _PENNER_QUAD
 #define _PENNER_QUAD
 
-class Quad
+class QuadCurve
 {
 
 public:

@@ -1,7 +1,7 @@
 #ifndef _PENNER_BACK
 #define _PENNER_BACK
 
-class Back
+class BackCurve
 {
 
 public:

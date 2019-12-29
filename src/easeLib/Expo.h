@@ -3,7 +3,7 @@
 
 #include <math.h>
 
-class Expo
+class ExpoCurve
 {
 
 public:

@@ -1,7 +1,7 @@
 #ifndef _PENNER_QUINT
 #define _PENNER_QUINT
 
-class Quint
+class QuintCurve
 {
 
 public:

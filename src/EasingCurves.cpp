@@ -68,13 +68,13 @@ void EasingCurves::setType(ease type)
     switch (type)
     {
     case BACK_IN:
-        easeFunction = (&Back::easeIn);
+        easeFunction = (&BackCurve::easeIn);
         break;
     case BACK_OUT:
-        easeFunction = (&Back::easeOut);
+        easeFunction = (&BackCurve::easeOut);
         break;
     case BACK_INOUT:
-        easeFunction = (&Back::easeInOut);
+        easeFunction = (&BackCurve::easeInOut);
         break;
     case BOUNCE_IN:
         easeFunction = (&BounceCurve::easeIn);
@@ -86,85 +86,85 @@ void EasingCurves::setType(ease type)
         easeFunction = (&BounceCurve::easeInOut);
         break;
     case CIRC_IN:
-        easeFunction = (&Circ::easeIn);
+        easeFunction = (&CircCurve::easeIn);
         break;
     case CIRC_OUT:
-        easeFunction = (&Circ::easeOut);
+        easeFunction = (&CircCurve::easeOut);
         break;
     case CIRC_INOUT:
-        easeFunction = (&Circ::easeInOut);
+        easeFunction = (&CircCurve::easeInOut);
         break;
     case CUBIC_IN:
-        easeFunction = (&Cubic::easeIn);
+        easeFunction = (&CubicCurve::easeIn);
         break;
     case CUBIC_OUT:
-        easeFunction = (&Cubic::easeOut);
+        easeFunction = (&CubicCurve::easeOut);
         break;
     case CUBIC_INOUT:
-        easeFunction = (&Cubic::easeInOut);
+        easeFunction = (&CubicCurve::easeInOut);
         break;
     case ELASTIC_IN:
-        easeFunction = (&Elastic::easeIn);
+        easeFunction = (&ElasticCurve::easeIn);
         break;
     case ELASTIC_OUT:
-        easeFunction = (&Elastic::easeOut);
+        easeFunction = (&ElasticCurve::easeOut);
         break;
     case ELASTIC_INOUT:
-        easeFunction = (&Elastic::easeInOut);
+        easeFunction = (&ElasticCurve::easeInOut);
         break;
     case EXPO_IN:
-        easeFunction = (&Expo::easeIn);
+        easeFunction = (&ExpoCurve::easeIn);
         break;
     case EXPO_OUT:
-        easeFunction = (&Expo::easeOut);
+        easeFunction = (&ExpoCurve::easeOut);
         break;
     case EXPO_INOUT:
-        easeFunction = (&Expo::easeInOut);
+        easeFunction = (&ExpoCurve::easeInOut);
         break;
     case LINEAR_IN:
-        easeFunction = (&Linear::easeIn);
+        easeFunction = (&LinearCurve::easeIn);
         break;
     case LINEAR_OUT:
-        easeFunction = (&Linear::easeOut);
+        easeFunction = (&LinearCurve::easeOut);
         break;
     case LINEAR_INOUT:
-        easeFunction = (&Linear::easeInOut);
+        easeFunction = (&LinearCurve::easeInOut);
         break;
     case SINE_IN:
-        easeFunction = (&Sine::easeIn);
+        easeFunction = (&SineCurve::easeIn);
         break;
     case SINE_OUT:
-        easeFunction = (&Sine::easeOut);
+        easeFunction = (&SineCurve::easeOut);
         break;
     case SINE_INOUT:
-        easeFunction = (&Sine::easeInOut);
+        easeFunction = (&SineCurve::easeInOut);
         break;
     case QUAD_IN:
-        easeFunction = (&Quad::easeIn);
+        easeFunction = (&QuadCurve::easeIn);
         break;
     case QUAD_OUT:
-        easeFunction = (&Quad::easeOut);
+        easeFunction = (&QuadCurve::easeOut);
         break;
     case QUAD_INOUT:
-        easeFunction = (&Quad::easeInOut);
+        easeFunction = (&QuadCurve::easeInOut);
         break;
     case QUART_IN:
-        easeFunction = (&Quart::easeIn);
+        easeFunction = (&QuartCurve::easeIn);
         break;
     case QUART_OUT:
-        easeFunction = (&Quart::easeOut);
+        easeFunction = (&QuartCurve::easeOut);
         break;
     case QUART_INOUT:
-        easeFunction = (&Quart::easeInOut);
+        easeFunction = (&QuartCurve::easeInOut);
         break;
     case QUINT_IN:
-        easeFunction = (&Quint::easeIn);
+        easeFunction = (&QuintCurve::easeIn);
         break;
     case QUINT_OUT:
-        easeFunction = (&Quint::easeOut);
+        easeFunction = (&QuintCurve::easeOut);
         break;
     case QUINT_INOUT:
-        easeFunction = (&Quint::easeInOut);
+        easeFunction = (&QuintCurve::easeInOut);
         break;
     }
 }

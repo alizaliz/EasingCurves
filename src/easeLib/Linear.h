@@ -1,7 +1,7 @@
 #ifndef _PENNER_LINEAR
 #define _PENNER_LINEAR
 
-class Linear
+class LinearCurve
 {
 
 public:

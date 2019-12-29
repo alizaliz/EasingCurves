@@ -7,7 +7,7 @@
 #define PI 3.14159265
 #endif
 
-class Elastic
+class ElasticCurve
 {
 
 public:

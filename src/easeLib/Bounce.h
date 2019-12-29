@@ -1,7 +1,7 @@
 #ifndef _PENNER_BOUNCE
 #define _PENNER_BOUNCE
 
-class Bounce
+class BounceCurve
 {
 
 public:

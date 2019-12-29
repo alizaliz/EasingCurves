@@ -1,10 +1,10 @@
 #include "Bounce.h"
 
-float Bounce::easeIn(float t, float b, float c, float d)
+float BounceCurve::easeIn(float t, float b, float c, float d)
 {
 	return c - easeOut(d - t, 0, c, d) + b;
 }
-float Bounce::easeOut(float t, float b, float c, float d)
+float BounceCurve::easeOut(float t, float b, float c, float d)
 {
 	if ((t /= d) < (1 / 2.75f))
 	{
@@ -27,7 +27,7 @@ float Bounce::easeOut(float t, float b, float c, float d)
 	}
 }
 
-float Bounce::easeInOut(float t, float b, float c, float d)
+float BounceCurve::easeInOut(float t, float b, float c, float d)
 {
 	if (t < d / 2)
 		return easeIn(t * 2, 0, c, d) * .5f + b;

@@ -3,7 +3,7 @@
 
 #include <math.h>
 
-class Circ
+class CircCurve
 {
 
 public:

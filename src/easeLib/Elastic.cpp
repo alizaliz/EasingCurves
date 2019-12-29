@@ -1,6 +1,6 @@
 #include "Elastic.h"
 
-float Elastic::easeIn(float t, float b, float c, float d)
+float ElasticCurve::easeIn(float t, float b, float c, float d)
 {
 	if (t == 0)
 		return b;
@@ -13,7 +13,7 @@ float Elastic::easeIn(float t, float b, float c, float d)
 	return -(postFix * sin((t * d - s) * (2 * PI) / p)) + b;
 }
 
-float Elastic::easeOut(float t, float b, float c, float d)
+float ElasticCurve::easeOut(float t, float b, float c, float d)
 {
 	if (t == 0)
 		return b;
@@ -25,7 +25,7 @@ float Elastic::easeOut(float t, float b, float c, float d)
 	return (a * pow(2, -10 * t) * sin((t * d - s) * (2 * PI) / p) + c + b);
 }
 
-float Elastic::easeInOut(float t, float b, float c, float d)
+float ElasticCurve::easeInOut(float t, float b, float c, float d)
 {
 	if (t == 0)
 		return b;
