@@ -43,12 +43,12 @@ float EasingCurves::evaluate(float t)
     return m_currentValue;
 }
 
-float EasingCurves::update()
+float EasingCurves::getValue()
 {
     return evaluate(static_cast<float>(micros() - m_startTime));
 }
 
-float EasingCurves::reverseUpdate()
+float EasingCurves::getValueOneMinus()
 {
     return evaluate(m_duration - static_cast<float>(micros() - m_startTime));
 }

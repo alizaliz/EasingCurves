@@ -1,4 +1,28 @@
 
+/*
+    MIT License (MIT)
+    Copyright (c) 2019 Zain Ali
+    Permission is hereby granted, free of charge, to any person obtaining a copy of
+    this software and associated documentation files (the "Software"), to deal in
+    the Software without restriction, including without limitation the rights to
+    use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
+    the Software, and to permit persons to whom the Software is furnished to do so,
+    subject to the following conditions:
+    The above copyright notice and this permission notice shall be included in all
+    copies or substantial portions of the Software.
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+    FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+    COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
+    IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+    CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+*/
+
+/**
+ * Wrapper and implementation originally by Zain Ali
+ * Based on Robert Penner's easeing functions : http://robertpenner.com/easing/
+ */
+
 #ifndef EasingCurves_h
 #define EasingCurves_h
 
@@ -57,19 +81,45 @@ class EasingCurves
 public:
     typedef float (*EaseFunction)(float t, float b, float c, float d);
 
+    /*! Instance */
     EasingCurves();
     EasingCurves(ease type, float start, float end, float duration);
 
+    /*! Start the auto timed curve function 
+        Sets active to true and startime to time of function call
+    */
     void start();
+    /*! Alias for start() function 
+    */
     void restart();
-    float update();
-    float reverseUpdate();
+    /*! Get value from ease curve
+        @return ease curve mapped value 
+     */
+    float getValue();
+    /*! Get one minus value of ease curve
+        @return 1 - t ease curve mapped value 
+    */
+    float getValueOneMinus();
 
-    void setDurationMillis(unsigned long interval);
-    void setDurationMicros(unsigned long interval);
+    /*! Set duration in milliseconds (1000 * microseconds)
+        @param duration
+        Duration in milliseconds
+    */
+    void setDurationMillis(unsigned long duration);
+    /*! Set duration in microseconds 
+        @param duration
+        Duration in microseonds
+    */
+    void setDurationMicros(unsigned long duration);
 
+    /*! Set type or mode of function 
+        @param type
+        type is ease enumeration type
+    */
     void setType(ease type);
-
+    /*! Get active state of function
+        @return bool to indicate if animationg of function is active
+    */
     bool isActive();
 
 private:
