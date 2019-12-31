@@ -2,7 +2,8 @@
 Easing library for Arduino. 
 Wrapper and implementation of Robert Penners easeing functions : http://robertpenner.com/easing/
 
-Use this library to give more vibrance to any animation (LED fade, servo movements etc.)
+Use this library add vibrance to animations - LED fade, servo movements etc...
+
 ![](http://vitiy.info/wp-content/uploads/2014/11/Screenshot-2014-11-27-16.22.22.png)
 
 # BASIC EXAMPLE
