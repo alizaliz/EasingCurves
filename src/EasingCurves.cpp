@@ -32,7 +32,7 @@ void EasingCurves::restart()
 float EasingCurves::evaluate(float t)
 {
 
-    if (t > m_duration || t < 0) // expand this for accuracy
+    if (t >= m_duration || t <= 0) // expand this for accuracy
     {
         m_active = false;
     }
