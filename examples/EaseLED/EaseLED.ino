@@ -27,11 +27,11 @@ void loop()
     int level;
     if (forward)
     {
-      level = ease.update();
+      level = ease.getValue();
     }
     else
     {
-      level = ease.reverseUpdate();
+      level = ease.getValueOneMinus();
     }
     analogWrite(LED_PIN, level);
   }

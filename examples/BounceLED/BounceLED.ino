@@ -37,7 +37,7 @@ void loop()
   // Update LED based on curve
   if (ease.isActive())
   {
-    analogWrite(LED_PIN, constrain(ease.update(), 0, 254));
+    analogWrite(LED_PIN, constrain(ease.getValue(), 0, 254));
   }
 
   // Turn on or off the LED as determined by the state :
