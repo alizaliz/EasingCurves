@@ -35,16 +35,14 @@ void loop()
   debouncer.update();
 
   // Update LED based on curve
-  if (ease.isActive())
+  if (ease.currentState() == ACTIVE)
   {
-    analogWrite(LED_PIN, constrain(ease.getValue(), 0, 254));
+      analogWrite(LED_PIN, constrain(ease.getValue(), 0, 254));
   }
 
   // Turn on or off the LED as determined by the state :
   if (debouncer.rose())
   {
     ease.start();
-    delay(100);
-    Serial.println("Start");
   }
 }

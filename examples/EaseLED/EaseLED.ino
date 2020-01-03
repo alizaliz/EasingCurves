@@ -21,23 +21,23 @@ void setup()
 
 void loop()
 {
-
-  if (ease.isActive())
+  switch (ease.currentState())
   {
-    int level;
-    if (forward)
-    {
-      level = ease.getValue();
-    }
-    else
-    {
-      level = ease.getValueOneMinus();
-    }
-    analogWrite(LED_PIN, level);
-  }
-  else
-  {
-    ease.restart();
-    forward = !forward;
+    case ACTIVE:
+      int level;
+      if (forward)
+      {
+        level = ease.getValue();
+      }
+      else
+      {
+        level = ease.getValueOneMinus();
+      }
+      analogWrite(LED_PIN, level);
+      break;
+    case INACTIVE:
+      ease.restart();
+      forward = !forward;
+      break;
   }
 }
