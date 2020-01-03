@@ -19,7 +19,7 @@
 */
 
 /**
- * Wrapper and implementation originally by Zain Ali
+ * Wrapper and implementation by Zain Ali
  * Based on Robert Penner's easeing functions : http://robertpenner.com/easing/
  */
 
@@ -76,12 +76,28 @@ enum ease
     QUINT_INOUT
 };
 
+enum animationState
+{
+    ACTIVE,
+    PAUSED,
+    INACTIVE
+};
+
 class EasingCurves
 {
 public:
     typedef float (*EaseFunction)(float t, float b, float c, float d);
 
-    /*! Instance */
+    /*! Instance 
+        @param type
+        ease enumeration type
+        @param start
+        start value on curve
+        @param end
+        end value on curve
+        @param duration
+        duration of ease in milliseconds
+    */
     EasingCurves();
     EasingCurves(ease type, float start, float end, float duration);
 
@@ -123,13 +139,13 @@ public:
 
     /*! Set type or mode of function 
         @param type
-        type is ease enumeration type
+        ease enumeration type
     */
     void setType(ease type);
-    /*! Get active state of function
-        @return bool to indicate if animationg of function is active
+    /*! Get  state of function
+        @return state of animation 
     */
-    bool isActive();
+    animationState currentState();
 
 private:
     float evaluate(float t);
@@ -143,7 +159,7 @@ private:
 
     float m_duration;
 
-    bool m_active;
+    animationState m_state;
 
     EaseFunction easeFunction;
 };

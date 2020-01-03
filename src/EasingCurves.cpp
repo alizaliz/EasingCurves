@@ -13,14 +13,14 @@ EasingCurves::EasingCurves(ease type, float start, float end, float duration)
     m_duration = 1000 * duration;
 }
 
-bool EasingCurves::isActive()
+animationState EasingCurves::currentState()
 {
-    return m_active;
+    return m_state;
 }
 
 void EasingCurves::start()
 {
-    m_active = true;
+    m_state = ACTIVE;
     m_startTime = micros();
 }
 
@@ -31,32 +31,33 @@ void EasingCurves::restart()
 
 void EasingCurves::pause()
 {
-    if (!m_active) return;
-    m_active = false;
+    if (m_state != ACTIVE) return;
+    m_state = PAUSED;
     m_pauseElapsedValue = micros() - m_startTime;
 }
 
 void EasingCurves::resume()
 {
-    if (m_active) return;
-    m_active = true;
+    if (m_state != PAUSED) return;
+    m_state = ACTIVE;
     m_startTime = micros() - m_pauseElapsedValue;
 }
 
 void EasingCurves::stop()
 {
-    m_active = false;
+    m_state = INACTIVE;
     m_currentValue = m_startValue;
 }
+
 
 float EasingCurves::evaluate(float t)
 {
     if (t >= m_duration || t <= 0) // expand this for accuracy
     {
-        m_active = false;
+        m_state = INACTIVE;
     }
 
-    if (m_active)
+    if (m_state == ACTIVE)
         m_currentValue = easeFunction(t, m_startValue, m_change, m_duration);
 
     return m_currentValue;
