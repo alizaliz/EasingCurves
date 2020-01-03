@@ -29,9 +29,28 @@ void EasingCurves::restart()
     start();
 }
 
+void EasingCurves::pause()
+{
+    if (!m_active) return;
+    m_active = false;
+    m_pauseElapsedValue = micros() - m_startTime;
+}
+
+void EasingCurves::resume()
+{
+    if (m_active) return;
+    m_active = true;
+    m_startTime = micros() - m_pauseElapsedValue;
+}
+
+void EasingCurves::stop()
+{
+    m_active = false;
+    m_currentValue = m_startValue;
+}
+
 float EasingCurves::evaluate(float t)
 {
-
     if (t >= m_duration || t <= 0) // expand this for accuracy
     {
         m_active = false;

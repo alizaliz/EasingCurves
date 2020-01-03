@@ -92,6 +92,15 @@ public:
     /*! Alias for start() function 
     */
     void restart();
+    /*! Halt timer and save current position
+    */
+    void pause();
+    /*! Continue timer and from saved position
+    */
+    void resume();
+    /*! Force stop and reset of postion
+    */
+    void stop();
     /*! Get value from ease curve
         @return ease curve mapped value 
      */
@@ -128,7 +137,10 @@ private:
     float m_startValue;
     float m_change;
     float m_currentValue;
+
     unsigned long m_startTime;
+    unsigned long m_pauseElapsedValue;
+
     float m_duration;
 
     bool m_active;

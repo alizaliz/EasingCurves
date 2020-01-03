@@ -12,12 +12,15 @@
 
 start	KEYWORD2
 restart	KEYWORD2
+pause	KEYWORD2
+resume	KEYWORD2
+stop	KEYWORD2
 getValue	KEYWORD2
 getValueOneMinus	KEYWORD2
 setDurationMillis	KEYWORD2
 setDurationMicros	KEYWORD2
 setType	KEYWORD2
-isActive	KEYWORD2
+currentState	KEYWORD2
 
 #######################################
 # Instances (KEYWORD1)
