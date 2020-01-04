@@ -32,24 +32,24 @@ void setup()
 
 void loop()
 {
-
-  if (ease.isActive())
+  switch (ease.currentState())
   {
-    int level;
-    if (forward)
-    {
-      level = ease.getValue();
-    }
-    else
-    {
-      level = ease.getValueOneMinus();
-    }
-    analogWrite(LED_PIN, level);
-  }
-  else
-  {
-    ease.restart();
-    forward = !forward;
+    case ACTIVE: // Animate while active
+      int level;
+      if (forward)
+      {
+        level = ease.getValue(); // Forward on curve
+      }
+      else
+      {
+        level = ease.getValueOneMinus(); // Backward on curve
+      }
+      analogWrite(LED_PIN, level); 
+      break;
+    case INACTIVE: // Restart and flip direction
+      ease.restart();
+      forward = !forward;
+      break;
   }
 }
 ```
