@@ -126,6 +126,13 @@ public:
     */
     float getValueOneMinus();
 
+    /*! Set start of curve value
+    */
+    void setStartValue(float start);
+    /*! Set end of curve value 
+    */
+    void setEndValue(float end);
+
     /*! Set duration in milliseconds (1000 * microseconds)
         @param duration
         Duration in milliseconds

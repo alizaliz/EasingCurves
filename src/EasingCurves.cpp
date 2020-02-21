@@ -73,6 +73,16 @@ float EasingCurves::getValueOneMinus()
     return evaluate(m_duration - static_cast<float>(micros() - m_startTime));
 }
 
+void EasingCurves::setStartValue(float start)
+{
+     m_startValue = start;
+}
+
+void EasingCurves::setEndValue(float end)
+{
+    m_change = end - m_startValue;
+}
+
 void EasingCurves::setDurationMillis(unsigned long duration)
 {
     m_duration = 1000 * duration;
